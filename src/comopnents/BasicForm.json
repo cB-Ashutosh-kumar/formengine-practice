@@ -10,6 +10,7 @@
       "params": {}
     }
   },
+  
   "tooltipType": "RsTooltip",
   "modalType": "RsModal",
   "errorType": "RsErrorMessage",
@@ -22,27 +23,6 @@
       }
     },
     "children": [
-      {
-        "key": "Header",
-        "type": "RsHeader",
-        "props": {
-          "content": {
-            "value": "Complex Master Form"
-          },
-          "headerSize": {
-            "value": "h4"
-          }
-        }
-      },
-      {
-        "key": "Email hint",
-        "type": "RsLabel",
-        "props": {
-          "text": {
-            "value": "Use a permanent address where you can receive mail."
-          }
-        }
-      },
       {
         "key": "Main container",
         "type": "RsContainer",
@@ -637,6 +617,9 @@
               "loading": {
                 "computeType": "function",
                 "fnSource": "    return form.isValidating"
+              },
+              "className": {
+                "value": "submit-btn"
               }
             },
             "events": {
@@ -690,6 +673,7 @@
       }
     ]
   },
+
   "localization": {},
   "languages": [
     {

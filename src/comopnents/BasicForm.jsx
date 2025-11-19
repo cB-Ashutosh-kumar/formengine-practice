@@ -1,6 +1,7 @@
 import {viewWithCss} from '@react-form-builder/components-rsuite'
 import {FormViewer} from '@react-form-builder/core'
 import basicFormJson from './BasicForm.json'
+import './style.module.scss'
 // const simpleForm = {
 //   version: '1',
 //   errorType: 'RsErrorMessage',

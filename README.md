@@ -4,6 +4,50 @@
 
 FormEngine is a JSON-first form builder for React that you use within your app, not just online. It replaces manual form code with a declarative, drag-and-drop or schema-based approach.
 
+
+
+![](./src/assets/form%20builder%20layout.png)
+#	Name
+1	MainContainer
+2	LeftPanel
+3	CentralPanel
+4	RightPanel
+5	LeftPanel_Nav
+6	LeftPanel_Content
+7	Header
+8	FormContainer
+9	RightPanel_Nav
+10	RightPanel_Content
+11	MainMenu_Dropdown
+12	MainMenu_Button
+13	Header_Toolbar
+14	ToggleModeButton
+15	ResolutionSelect
+16	LocalizationSelect
+17	JsonViewButton
+18	ToggleThemeButton
+
+![](./src/assets/components%20depth%20tab.png)
+
+#	Name
+1	Components_Tab
+2	Components_Tab_Content
+3	Tree_Tab
+4	Tree_Tab_Content
+5	Settings_Tab
+6	Settings_Tab_Content
+7	Forms_Tab
+8	Forms_Tab_Content
+9	Main_Tab
+10	Style_Tab
+11	Actions_Tab
+12	Rules_Tab
+13	Main_Tab_Content,Style_Tab_Content,Actions_Tab_Content,Rules_Tab_Content
+14	LabeledProperty
+15	PropertyCodeButton
+16	PropertyLabel
+17	PropertyInput
+
 ## 🧩 What Is FormEngine?
 
 FormEngine is an open-source React form builder that lets you:
@@ -81,3 +125,4 @@ This is the main Form Builder package that contains the React methods and compon
 - Export the form as a JSON schema.
 - Use that JSON inside your React app by installing FormEngine packages.
 - Render the form dynamically using `<FormEngine schema={...} />`.
+
