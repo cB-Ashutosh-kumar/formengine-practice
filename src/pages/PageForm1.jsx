@@ -2,7 +2,7 @@ import React from 'react'
 import BasicForm from '../comopnents/BasicForm'
 const PageForm1 = () => {
   return (
-    <div >
+    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "30px" }} >
       <BasicForm />
     </div>
   )

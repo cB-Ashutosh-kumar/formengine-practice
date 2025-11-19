@@ -1,63 +1,91 @@
+import {viewWithCss} from '@react-form-builder/components-rsuite'
+import {FormViewer} from '@react-form-builder/core'
+import basicFormJson from './BasicForm.json'
+// const simpleForm = {
+//   version: '1',
+//   errorType: 'RsErrorMessage',
+//   form: {
+//     key: 'Screen',
+//     type: 'Screen',
+//     props: {},
+//     children: [
+//       {
+//         key: 'name',
+//         type: 'RsInput',
+//         props: {
+//           label: {
+//             value: 'Name'
+//           }
+//         }
+//       },
+//       {
+//         key: 'email',
+//         type: 'RsInput',
+//         props: {
+//           label: {
+//             value: 'Email'
+//           }
+//         },
+//         schema: {
+//           validations: [
+//             {
+//               key: 'email'
+//             }
+//           ]
+//         }
+//       },
+//       {
+//         key: 'submit',
+//         type: 'RsButton',
+//         props: {
+//           appearance: {
+//             value: 'primary'
+//           },
+//           children: {
+//             value: 'Submit'
+//           }
+//         },
+//         events: {
+//           onClick: [
+//             {
+//               name: 'validate',
+//               type: 'common',
+//               args: {
+//                 failOnError: true
+//               }
+//             },
+//             {
+//               name: 'onSubmit',
+//               type: 'custom'
+//             }
+//           ],
+//         }
+//       }
+//     ]
+//   },
+//   localization: {},
+//   languages: [
+//     {
+//       code: 'en',
+//       dialect: 'US',
+//       name: 'English',
+//       description: 'American English',
+//       bidi: 'ltr'
+//     }
+//   ],
+//   defaultLanguage: 'en-US'
+// }
 
-import { viewWithCss } from '@react-form-builder/components-rsuite'
-import { buildForm, FormViewer } from '@react-form-builder/core'
-import { useCallback, useMemo } from 'react'
-import './style.module.scss'
-const BasicForm = () => {
-  const simpleForm = useMemo(() => {
-    return buildForm({ errorType: 'RsErrorMessage' })
-      .component('container', 'RsContainer')
-      .style({ flexDirection: 'row' })
-      .children((builder) =>
-        builder
-          .component('firstName', 'RsInput')
-          .prop('placeholder', 'Enter your first name')
-          .prop('label', 'First Name')
-          .validation('required')
-          .component('lastName', 'RsInput')
-          .prop('placeholder', 'Enter your last name')
-          .prop('label', 'Last Name')
-          .validation('required')
-      )
-
-      .component('birthDate', 'RsDatePicker')
-      .prop('label', 'Birth Date')
-      .prop('oneTap', true)
-      .validation('min').args({ value: '1900-01-07T12:25:37.000Z' })
-      .component('submit', 'RsButton')
-      .prop('children', 'Submit')
-      .prop({"backgroundColor": "#000"})
-      .prop('className','submit-btn')
-      .prop('color', 'blue')
-      // .prop('appearance', 'primary')
-      .event('onClick')
-      .commonAction('validate').args({ failOnError: true })
-      .customAction('onSubmit')
-      .json()
-  }, [])
-
-  const getForm = useCallback(() => simpleForm, [simpleForm])
-
-  const actions = useMemo(() => {
-    return {
+const BasicForm = () => (
+  <FormViewer
+    view={viewWithCss}
+    getForm={() => JSON.stringify(basicFormJson)}
+    actions={{
       onSubmit: (e) => {
-
         alert('Form data: ' + JSON.stringify(e.data))
       },
-    }
-  }, [])
-
-
-  return (
-    <div>
-      <h1 style={{ textAlign: "center", marginBottom: "10px" }}>formEngine</h1>
-      <FormViewer
-        view={viewWithCss}
-        getForm={getForm}
-        actions={actions}
-      />
-    </div>
-  )
-}
+    }}
+  />
+)
 
 export default BasicForm
