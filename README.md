@@ -123,6 +123,6 @@ This is the main Form Builder package that contains the React methods and compon
 
 - Design forms visually on the FormEngine platform (drag-and-drop or AI-assisted).
 - Export the form as a JSON schema.
-- Use that JSON inside your React app by installing FormEngine packages.
+- Use that JSON inside your React app by installinFormEngine package
 - Render the form dynamically using `<FormEngine schema={...} />`.
 

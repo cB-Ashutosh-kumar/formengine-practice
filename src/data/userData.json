@@ -1,0 +1,778 @@
+{
+  "version": "1",
+  "actions": {
+    "logValue": {
+      "body": "  console.log('Name', e.data.name)",
+      "params": {}
+    }
+  },
+  "tooltipType": "RsTooltip",
+  "errorType": "RsErrorMessage",
+  "form": {
+    "key": "Screen",
+    "type": "Screen",
+    "props": {},
+    "css": {
+      "any": {
+        "string": "  ",
+        "object": {
+          "marginBottom": "10px"
+        }
+      }
+    },
+    "children": [
+      {
+        "key": "rsHeader1",
+        "type": "RsHeader",
+        "props": {
+          "headerSize": {
+            "value": "h5"
+          },
+          "content": {
+            "value": "Add Non-Employee Information"
+          }
+        },
+        "css": {
+          "any": {
+            "object": {
+              "textAlign": "start"
+            },
+            "string": "font-size: 14px;\ncolor: #1E1E1E;"
+          }
+        }
+      },
+      {
+        "key": "rsContainer1",
+        "type": "RsContainer",
+        "props": {},
+        "css": {
+          "any": {
+            "string": "border-radius: 8px;\nbackground-color: ##FCFCFC;\nborder: .6px solid #D5D5D5;\ncolor: #ffffff;\npadding: 12px;"
+          }
+        },
+        "children": [
+          {
+            "key": "rsContainer2",
+            "type": "RsContainer",
+            "props": {},
+            "css": {
+              "any": {
+                "object": {
+                  "flexWrap": "nowrap",
+                  "flexDirection": "row"
+                }
+              }
+            },
+            "children": [
+              {
+                "key": "rsDropdown1",
+                "dataKey": "",
+                "type": "RsDropdown",
+                "props": {
+                  "label": {
+                    "value": "Prefix"
+                  },
+                  "data": {
+                    "value": [
+                      {
+                        "value": "mr",
+                        "label": "Mr."
+                      },
+                      {
+                        "label": "Mrs.",
+                        "value": "mrs"
+                      }
+                    ]
+                  },
+                  "cleanable": {
+                    "value": false
+                  },
+                  "placeholder": {
+                    "value": "Select Prefix"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": " color:#1E1E1E;"
+                  }
+                }
+              },
+              {
+                "key": "rsInput1",
+                "dataKey": "firstName",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "First Name "
+                  },
+                  "placeholder": {
+                    "value": "Enter First Name"
+                  },
+                  "size": {
+                    "value": "md"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "wrapperCss": {
+                  "any": {
+                    "object": {}
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "args": {}
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsInput2",
+                "dataKey": "middleName",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "Middle Name"
+                  },
+                  "placeholder": {
+                    "value": "Enter Middle Name"
+                  },
+                  "readOnly": {
+                    "value": false
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "args": {
+                        "message": "First Name is required "
+                      }
+                    },
+                    {
+                      "key": "nonEmpty"
+                    }
+                  ],
+                  "autoValidate": true
+                }
+              }
+            ]
+          },
+          {
+            "key": "rsContainer3",
+            "type": "RsContainer",
+            "props": {},
+            "css": {
+              "any": {
+                "object": {
+                  "flexWrap": "nowrap",
+                  "flexDirection": "row"
+                }
+              }
+            },
+            "children": [
+              {
+                "key": "rsInput3",
+                "dataKey": "lastName",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "Last Name"
+                  },
+                  "placeholder": {
+                    "value": "Enter Last Name"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "args": {
+                        "message": "First Name is required "
+                      }
+                    },
+                    {
+                      "key": "length",
+                      "args": {
+                        "length": 5
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsInput4",
+                "dataKey": "userName",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "UserName"
+                  },
+                  "placeholder": {
+                    "value": "Enter Unique Username"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "args": {
+                        "message": "First Name is required "
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsDropdown2",
+                "type": "RsDropdown",
+                "props": {
+                  "label": {
+                    "value": "Gender"
+                  },
+                  "data": {
+                    "value": [
+                      {
+                        "value": "male",
+                        "label": "Male"
+                      },
+                      {
+                        "label": "Female",
+                        "value": "Female"
+                      }
+                    ]
+                  },
+                  "cleanable": {
+                    "value": false
+                  },
+                  "placeholder": {
+                    "value": "Select Gender"
+                  },
+                  "placement": {
+                    "value": "bottomEnd"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": " color:#1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required"
+                    }
+                  ],
+                  "autoValidate": false
+                },
+                "events": {
+                  "onSelect": []
+                }
+              }
+            ]
+          },
+          {
+            "key": "rsContainer4",
+            "type": "RsContainer",
+            "props": {},
+            "css": {
+              "any": {
+                "object": {
+                  "flexWrap": "nowrap",
+                  "flexDirection": "row"
+                }
+              }
+            },
+            "children": [
+              {
+                "key": "rsInput5",
+                "dataKey": "panNumber",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "Pan Number"
+                  },
+                  "placeholder": {
+                    "value": "Enter PAN Number"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "args": {
+                        "message": "First Name is required "
+                      }
+                    },
+                    {
+                      "key": "length",
+                      "args": {
+                        "length": 5
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsDatePicker1",
+                "type": "RsDatePicker",
+                "props": {
+                  "label": {
+                    "value": "Date Of Birth"
+                  },
+                  "placement": {
+                    "value": "bottomEnd"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsInput6",
+                "dataKey": "email",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "Email"
+                  },
+                  "placeholder": {
+                    "value": "Enter Email ID"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "args": {
+                        "message": "First Name is required "
+                      }
+                    },
+                    {
+                      "key": "length",
+                      "args": {
+                        "length": 5
+                      }
+                    },
+                    {
+                      "key": "email"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "key": "rsContainer5",
+            "type": "RsContainer",
+            "props": {},
+            "css": {
+              "any": {
+                "object": {
+                  "flexWrap": "nowrap",
+                  "flexDirection": "row"
+                }
+              }
+            },
+            "children": [
+              {
+                "key": "rsInput7",
+                "dataKey": "mobileNumber",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "Mobile Nubmer"
+                  },
+                  "placeholder": {
+                    "value": "Enter Mobile Number"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "args": {
+                        "message": "First Name is required "
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsInput9",
+                "dataKey": "mobileNumber",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "Official Landing Number"
+                  },
+                  "placeholder": {
+                    "value": "Official Landing Number"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": []
+                }
+              },
+              {
+                "key": "rsInput10",
+                "dataKey": "email",
+                "type": "RsInput",
+                "props": {
+                  "label": {
+                    "value": "Official Email  ID"
+                  },
+                  "placeholder": {
+                    "value": "Enter Official Email ID"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": []
+                }
+              }
+            ]
+          },
+          {
+            "key": "rsContainer6",
+            "type": "RsContainer",
+            "props": {},
+            "css": {
+              "any": {
+                "object": {
+                  "flexWrap": "nowrap",
+                  "flexDirection": "row"
+                }
+              }
+            },
+            "children": [
+              {
+                "key": "rsDatePicker3",
+                "type": "RsDatePicker",
+                "props": {
+                  "label": {
+                    "value": "Elective From  Date"
+                  },
+                  "placement": {
+                    "value": "bottomEnd"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsDatePicker2",
+                "type": "RsDatePicker",
+                "props": {
+                  "label": {
+                    "value": "Ellective Till Date"
+                  },
+                  "placement": {
+                    "value": "bottomEnd"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsDropdown3",
+                "type": "RsDropdown",
+                "props": {
+                  "label": {
+                    "value": "Designation"
+                  },
+                  "placeholder": {
+                    "value": "Select Designation"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "color:#1E1E1E ;"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "key": "rsCheckbox1",
+            "dataKey": "isActive",
+            "type": "RsCheckbox",
+            "props": {
+              "children": {
+                "value": "Is Active"
+              },
+              "checked": {
+                "value": false
+              }
+            },
+            "css": {
+              "any": {
+                "string": "color:  #1E1E1E;"
+              }
+            },
+            "schema": {
+              "validations": [
+                {
+                  "key": "code"
+                }
+              ]
+            }
+          },
+          {
+            "key": "rsContainer7",
+            "type": "RsContainer",
+            "props": {},
+            "css": {
+              "any": {
+                "object": {
+                  "flexWrap": "nowrap",
+                  "flexDirection": "row"
+                }
+              }
+            },
+            "children": [
+              {
+                "key": "rsTextArea1",
+                "type": "RsTextArea",
+                "props": {
+                  "label": {
+                    "value": "Address Line 1"
+                  },
+                  "rows": {
+                    "value": 3
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": " color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": [
+                    {
+                      "key": "required",
+                      "validateWhen": {
+                        "value": "form.data.rsCheckbox1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsTextArea2",
+                "type": "RsTextArea",
+                "props": {
+                  "label": {
+                    "value": "Address Line 2"
+                  },
+                  "rows": {
+                    "value": 3
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": " color: #1E1E1E;"
+                  }
+                },
+                "schema": {
+                  "validations": []
+                }
+              }
+            ]
+          },
+          {
+            "key": "rsContainer8",
+            "type": "RsContainer",
+            "props": {},
+            "css": {
+              "any": {
+                "object": {
+                  "flexWrap": "nowrap",
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "end"
+                }
+              }
+            },
+            "children": [
+              {
+                "key": "rsButton1",
+                "type": "RsButton",
+                "props": {
+                  "children": {
+                    "value": "Cancel"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "border-radius: 8px;"
+                  }
+                },
+                "wrapperCss": {
+                  "any": {
+                    "object": {
+                      "width": "200px"
+                    }
+                  }
+                },
+                "events": {
+                  "onClick": [
+                    {
+                      "name": "clear",
+                      "type": "common"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsButton3",
+                "type": "RsButton",
+                "props": {
+                  "children": {
+                    "value": "reset"
+                  },
+                  "appearance": {
+                    "value": "default"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "border-radius: 8px;\nbackground-color: rgb(226, 102, 102);\ncolor: white;"
+                  }
+                },
+                "wrapperCss": {
+                  "any": {
+                    "object": {
+                      "width": "200px"
+                    }
+                  }
+                },
+                "events": {
+                  "onClick": [
+                    {
+                      "name": "reset",
+                      "type": "common"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "rsButton2",
+                "type": "RsButton",
+                "props": {
+                  "children": {
+                    "value": "Submit"
+                  }
+                },
+                "css": {
+                  "any": {
+                    "string": "border-radius: 8px;\ncolor: white;\nbackground-color: cadetblue;"
+                  }
+                },
+                "wrapperCss": {
+                  "any": {
+                    "object": {
+                      "width": "180px"
+                    }
+                  }
+                },
+                "events": {
+                  "onClick": [
+                    {
+                      "name": "validate",
+                      "type": "common"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "localization": {},
+  "languages": [
+    {
+      "code": "en",
+      "dialect": "US",
+      "name": "English",
+      "description": "American English",
+      "bidi": "ltr"
+    }
+  ],
+  "defaultLanguage": "en-US"
+}
