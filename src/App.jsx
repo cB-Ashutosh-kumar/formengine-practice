@@ -9,11 +9,11 @@ function App() {
 
   return (
     <>
-      {/* <PageForm1 /> */}
+      {/* <PageForm1PageForm1 /> */}
       <div style={{ padding: "20px", margin: "0 auto", }}>
-        {/* <UserDetails/> */}
+        <UserDetails/>
         {/* <ChildToParent/> */}
-        <EmployListPage />
+        {/* <EmployListPage />  */}
       </div>
     </>
   )

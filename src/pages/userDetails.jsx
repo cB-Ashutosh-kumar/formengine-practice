@@ -10,6 +10,8 @@ const UserDetails = () => {
     <div>
       <FormViewer
         view={viewWithCss}
+
+        
         getForm={() => JSON.stringify(userFormDataSchema)}
       />
     </div>
